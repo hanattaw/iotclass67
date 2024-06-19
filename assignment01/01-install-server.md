@@ -2,7 +2,36 @@
 
 
 ## How to install Server
+* install Ubuntu 24.04 (LTS) on server
+* install docker and docker compose
+* install wireless-tools, net-tools, git, vim
+``` bash
+    # install wireless-tools, net-tools, git, vim
+    $ sudo apt install wireless-tools net-tools git vim
 
+    # git clone project
+    $ git clone https://github.com/sergio11/iot_event_streaming_architecture.git
+```
+* set up Docker and Run
+``` bash
+    # use vim edit file
+    $ sudo vim /etc/docker/daemon.json
+
+    # Put this text in the file.
+    {
+      "dns": ["8.8.8.8", "8.8.4.4"]
+    }
+
+    # restart service docker
+    $ sudo systemctl restart docker
+
+    # docker login
+    $ sudo docker login
+
+    # into project and docker compose
+    $ cd iot_event_streaming_architecture
+    $ sudo docker compose up
+```
 
 
 
